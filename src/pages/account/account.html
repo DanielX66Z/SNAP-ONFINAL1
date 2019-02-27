@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu">Settings</ion-icon>
+      </button> 
+      <ion-title>
+       Settings
+        <button  ion-button class="back-button disable-hover bar-button bar-button-md back-button-md bar-button-default bar-button-default-md show-back-button" (click)="updateUser()" style="float: right !important;"> 
+    <ion-icon  name="checkmark" style="color: #FFF !important; font-size: 175% !important"></ion-icon>  
+    </button> 
+      </ion-title>
+    </ion-navbar>  
+  </ion-header>
+ 
+  <ion-content has-header="true"> 
+     
+      <div id="content">
+        <div id="profile-info">
+          <img id="profile-image" src="assets/imgs/nopicture.png">
+          <h3 id="profile-name">{{customerName}}</h3>
+          
+        <ion-list>
+          <ion-item>
+          <ion-input type="text" [(ngModel)]="customerName"  placeholder="name">
+           	 </ion-input>
+          </ion-item> 
+          <ion-item>
+          <ion-input type="text" [(ngModel)]="customerAddress"  placeholder="address">
+
+           
+             </ion-input>
+
+          </ion-item>
+          <ion-item>
+          <ion-input type="email" [(ngModel)]="customerEmail"  placeholder="email">
+
+          
+             </ion-input> 
+
+          </ion-item>
+          <ion-item> 
+           <button  ion-button (click)="changePassword()" color="light">Change Password</button>
+           </ion-item>
+           <ion-item> 
+           <button  ion-button (click)="manageAddresses()" color="light">Manage Addresses</button>
+           </ion-item> 
+        </ion-list> 
+        </div>
+        
+      </div>
+    </ion-content>
+

@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>SNAP-ON</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- aqui ira la barra de busqueda-->
+  <ion-searchbar [(ngModel)]="searchItem" [formControl]="searchControl" (ionInput)="setFilteredItem()"
+  [showCancelButton]="true" cancelButtonText="Cancel" placeholder="search product" (ionCancel)="onCancel()"
+  (ionClear)="onCancel()"></ion-searchbar>
+<!--spinner para cargar cuando se busca, evaluar si hay que cambiar-->
+
+<!--lista de resultados si es mayor a cero lo mostrarar -->
+<ion-list *ngIf="searchItem.length>0">
+  <ion-item-sliding #slidingItem>
+    <!--<ion-item  *ngFor="let item of items">-->
+    <button ion-item *ngFor="let item of items" (click)="busarProducto(item)">
+      {{item.name}}
+    </button>
+    <!--</ion-item>-->
+  </ion-item-sliding>
+</ion-list>
+
+
+<!--fin de busqueda-->
+  <!--aqui ira carga por productos  -->
+  <ion-grid>
+    
+    <h1 class="item menu-divider">Products</h1>
+    <ion-row *ngFor="let i of productsRows" (click)="showProductDetail(product)">
+      <ion-col *ngFor="let product of products | slice:(i*2):(i+1)*2" width-50>
+        <ion-card>
+          <img src="{{product.thumb}}" alt="">
+          <ion-card-content>
+            <p>
+              {{product.name }}
+              {{product.price | currency:'USD':true }}
+            </p>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

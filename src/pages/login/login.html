@@ -1,0 +1,33 @@
+<ion-content>
+    <ion-fab top left>
+      <button ion-fab (click)="returnHome()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-fab>
+           
+        <ion-list>
+            <div class="top-page">
+             
+                  <img src="assets/imgs/snap-on.png" alt="">
+            
+                
+            </div>
+            <div class="middle-page">
+             
+                <ion-item class="username">
+                  <ion-input type="text" [(ngModel)]="email" style="color: white"  placeholder="Email"></ion-input>
+                </ion-item>
+              
+                <ion-item>
+                  <ion-input type="password" [(ngModel)]="password" style="color: white"  placeholder="Password"></ion-input>
+                </ion-item>
+              
+              
+              
+                <button ion-button full (click)="login()"  color="primary">Sign In</button>  
+                <button ion-button clear class="text-white" (click)="showRegisterPage()" style="float: right;margin-top:0">Sign Up</button>
+            </div>
+          
+          </ion-list>
+    </ion-content>
+    

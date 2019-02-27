@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="danger">
+     <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+ 
+    <ion-title>SNAP-ON</ion-title>
+    
+  </ion-navbar>
+</ion-header>
+<!--cambios realizados por el cacaso-->
+<ion-content >
+ 
+ <!--aqui ira carga de categorias  -->
+ <ion-grid>
+   <h1 class="item menu-divider">Categories</h1>
+    <ion-row *ngFor="let i of categoriesRows">
+      <ion-col *ngFor="let categories of categories | slice:(i*2):(i+1)*2" width-50 (click)="showProducts(categories)">
+        <ion-card>         
+          <img src="{{categories.thumb}}" alt="">
+          <ion-card-content>
+              <p>
+                  {{categories.name }}
+              </p>
+          </ion-card-content>
+         </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>
