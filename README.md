@@ -1,10 +1,10 @@
-"# SNAP-ON2" 
-Aplicacion prototipo ecommerce para snap-on2 
+***SNAP-ON2*** 
+***Aplicacion prototipo ecommerce para snap-on2 ***
 Para poder ejecutar la aplicacion se necesita
-1- Instalar node.js
-2- Instalar el cli de ionic
-3- Tener instalado android studio SDK
-4- Instalar cordova
+1- Instalar node.js.
+2- Instalar el cli de ionic.
+3- Tener instalado android studio SDK.
+4- Instalar cordova.
 
 para poder ejecutar la aplicacion en la terminal de windows o linux ejecutar el comando
 npm install
