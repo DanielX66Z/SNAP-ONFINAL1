@@ -28,14 +28,9 @@ export class CreditProvider {
       
         console.log("antes de morir"+card.number);
         var numberCard=card.number;
-       // this.firedata.child('CreditCard').
-       //this.firedata.remove(card.number);
-     //   this.firedata.
- //       this.creditCard.pop();
- this.firedata.orderByChild("number").equalTo(numberCard).on("value", function(snapshot) {
-    this.firedata.child(snapshot.key).removeValue();
-  });
-   //     this.events.publish('creditReload');
+        this.firedata.orderByChild('number').equalTo(numberCard).ref.remove();
+        this.creditCard.pop();
+        this.events.publish('creditLoaded');
     
 }
 
