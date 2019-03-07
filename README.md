@@ -1,6 +1,6 @@
-***SNAP-ON2*** 
+***SNAP-ON*** 
 
-***Aplicacion prototipo ecommerce para snap-on2 ***
+***Aplicacion prototipo ecommerce para snap-on ***
 
 Para poder ejecutar la aplicacion se necesita 
 	1- Instalar node.js.
